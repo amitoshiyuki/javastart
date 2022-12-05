@@ -34,7 +34,6 @@ public class LoginServlet extends HttpServlet {
 		String userId = request.getParameter("userId");
 		String pass = request.getParameter("pass");
 		String name = request.getParameter("name");
-		String age = request.getParameter("age");
 		
 		//ログイン処理実行
 		Login login = new Login(userId, pass);
@@ -45,7 +44,10 @@ public class LoginServlet extends HttpServlet {
 		if(result) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", userId  );
+			session.setAttribute("pass", pass  );
 			
+			//追加
+			request.setAttribute("name", name );
 			
 			//フォワード
 			RequestDispatcher dispatcher =
