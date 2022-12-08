@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("userId", userId  );
 			session.setAttribute("pass", pass  );
 			
-			//追加
+			//追加 追加
 			request.setAttribute("name", name );
 			
 			//フォワード
